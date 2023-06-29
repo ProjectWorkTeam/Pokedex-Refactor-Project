@@ -133,3 +133,4 @@ for pokemon_data in pokemons:
     db.session.add(pokemon)
 
 db.session.commit()
+
