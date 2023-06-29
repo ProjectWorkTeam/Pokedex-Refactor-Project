@@ -41,3 +41,23 @@ class Pokemon(db.Model):
         "Item",
         back_populates="pokemon"
     )
+
+    def __init__(self):
+         return {
+            "id" : self.id,
+            "number" : self.number,
+            "attack" : self.attack,
+            "defense" : self.defense,
+            "imageUrl" : self.imageUrl,
+            "name" : self.name,
+            "type" : self.type,
+            "moves" : self.moves,
+            "encounterRate" : self.encounterRate,
+            "catchRate" : self.catchRate,
+            "captured": self.captured,
+            "createdAt": self.createdAt,
+            "updatedAt": self.updatedAt,
+            }
+
+    def __repr__(self):
+        return f"< Pokemon: {self.name}>"

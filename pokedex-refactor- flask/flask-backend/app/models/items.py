@@ -10,7 +10,7 @@ class Item(db.Model):
     imageUrl = db.Column(db.String(255), nullable=False)
     name = db.Column(db.String(255), nullable=False)
     price = db.Column(db.Integer, nullable=False)
-    pokemonId = db.Column(db.Integer, nullable=False)
+    pokemonId = db.Column(db.Integer, db.ForeignKey("pokemons.id"), nullable=False)
     createdAt = db.Column(db.Date, nullable=False)
     updatedAt = db.Column(db.Date, nullable=False)
 
@@ -19,3 +19,18 @@ class Item(db.Model):
         "Pokemon",
         back_populates="item"
     )
+
+    def __init__(self):
+         return {
+            "id" : self.id,
+            "happiness" : self.happiness,
+            "imageUrl" : self.imageUrl,
+            "name" : self.name,
+            "price" : self.price,
+            "pokemonId" : self.pokemonId,
+            "createdAt": self.createdAt,
+            "updatedAt": self.updatedAt,
+            }
+
+    def __repr__(self):
+        return f"<Item {self.name}>"
