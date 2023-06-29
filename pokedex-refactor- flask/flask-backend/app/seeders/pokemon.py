@@ -1,8 +1,7 @@
 from app.models import Pokemon
 from flask_sqlalchemy import SQLAlchemy
-from app import db
 
-def seed_data():
+def seed_data(db):
     pokemons = [
     {
         'number': 60,
@@ -13,9 +12,8 @@ def seed_data():
         'type': 'water',
         'moves': ['bubble', 'water gun'],
         'captured': True
-
     },
-      {
+    {
         'number': 52,
         'imageUrl': '/images/pokemon_snaps/52.svg',
         'name': 'Meowth',
@@ -24,9 +22,8 @@ def seed_data():
         'type': 'normal',
         'moves': ['scratch', 'bite'],
         'captured': True
-
     },
-      {
+    {
         'number': 80,
         'imageUrl': '/images/pokemon_snaps/80.svg',
         'name': 'Slowbro',
@@ -35,9 +32,8 @@ def seed_data():
         'type': 'water',
         'moves': ['psychic', 'water gun', 'confusion', 'headbutt'],
         'captured': True
-
     },
-      {
+    {
         'number': 94,
         'imageUrl': '/images/pokemon_snaps/94.svg',
         'name': 'Gengar',
@@ -46,9 +42,8 @@ def seed_data():
         'type': 'ghost',
         'moves': ['tackle', 'lick', 'shadow punch', 'shadow ball'],
         'captured': True
-
     },
-      {
+    {
         'number': 110,
         'imageUrl': '/images/pokemon_snaps/110.svg',
         'name': 'Weezing',
@@ -57,9 +52,8 @@ def seed_data():
         'type': 'poison',
         'moves': ['tackle', 'smog', 'sludge'],
         'captured': True
-
     },
-      {
+    {
         'number': 113,
         'imageUrl': '/images/pokemon_snaps/113.svg',
         'name': 'Chansey',
@@ -68,9 +62,8 @@ def seed_data():
         'type': 'normal',
         'moves': ['pound', 'egg bomb'],
         'captured': True
-
     },
-      {
+    {
         'number': 121,
         'imageUrl': '/images/pokemon_snaps/121.svg',
         'name': 'Starmie',
@@ -79,9 +72,8 @@ def seed_data():
         'type': 'water',
         'moves': ['water gun', 'swift'],
         'captured': True
-
     },
-      {
+    {
         'number': 131,
         'imageUrl': '/images/pokemon_snaps/131.svg',
         'name': 'Lapras',
@@ -90,9 +82,8 @@ def seed_data():
         'type': 'water',
         'moves': ['water gun', 'body slam', 'ice beam', 'hydro pump'],
         'captured': True
-
     },
-      {
+    {
         'number': 143,
         'imageUrl': '/images/pokemon_snaps/143.svg',
         'name': 'Snorlax',
@@ -101,9 +92,8 @@ def seed_data():
         'type': 'normal',
         'moves': ['tackle', 'headbutt', 'snore', 'body slam'],
         'captured': True
-
     },
-      {
+    {
         'number': 7,
         'imageUrl': '/images/pokemon_snaps/7.svg',
         'name': 'Squirtle',
@@ -112,9 +102,8 @@ def seed_data():
         'type': 'water',
         'moves': ['tackle', 'bubble', 'water gun'],
         'captured': True
-
     },
-      {
+    {
         'number': 65,
         'imageUrl': '/images/pokemon_snaps/65.svg',
         'name': 'Alakazam',
@@ -123,12 +112,11 @@ def seed_data():
         'type': 'psychic',
         'moves': ['confusion', 'psybeam', 'psychic'],
         'captured': True
-
     },
-]
+    ]
 
-for pokemon_data in pokemons:
-    pokemon = Pokemon(**pokemon_data)
-    db.session.add(pokemon)
+    for pokemon_data in pokemons:
+        pokemon = Pokemon(**pokemon_data)
+        db.session.add(pokemon)
 
-db.session.commit()
+    db.session.commit()

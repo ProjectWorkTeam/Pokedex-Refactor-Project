@@ -1,6 +1,5 @@
-from app import db
 from app.models import Item
-import random
+from flask_sqlalchemy import SQLAlchemy
 
 def random_100():
     return random.randint(1, 100)
@@ -45,14 +44,17 @@ def generate_items():
     return items
 
 def seed_items():
+    db = SQLAlchemy()
     items = generate_items()
     for item in items:
         db.session.add(item)
     db.session.commit()
 
 def delete_items():
+    db = SQLAlchemy()
     Item.query.delete()
     db.session.commit()
 
 if __name__ == "__main__":
     seed_items()
+    delete_items()

@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 import enum
-db = SQLAlchemy()
+from app import db
 
 class Types(enum.Enum):
     fire = "fire"
