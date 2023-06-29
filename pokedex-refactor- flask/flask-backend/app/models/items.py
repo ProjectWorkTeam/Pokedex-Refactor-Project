@@ -1,4 +1,4 @@
-from flask_sqlalchemy import SQLAlchemy
+#models/items.py
 from app import db
 
 class Item(db.Model):
@@ -19,17 +19,15 @@ class Item(db.Model):
         back_populates="item"
     )
 
-    def __init__(self):
-         return {
-            "id" : self.id,
-            "happiness" : self.happiness,
-            "imageUrl" : self.imageUrl,
-            "name" : self.name,
-            "price" : self.price,
-            "pokemonId" : self.pokemonId,
-            "createdAt": self.createdAt,
-            "updatedAt": self.updatedAt,
-            }
+def __init__(self, happiness, imageUrl, name, price, pokemonId, createdAt, updatedAt):
+    self.happiness = happiness
+    self.imageUrl = imageUrl
+    self.name = name
+    self.price = price
+    self.pokemonId = pokemonId
+    self.createdAt = createdAt
+    self.updatedAt = updatedAt
+
 
     def __repr__(self):
         return f"<Item {self.name}>"

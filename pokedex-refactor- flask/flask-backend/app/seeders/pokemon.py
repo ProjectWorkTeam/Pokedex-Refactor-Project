@@ -1,5 +1,5 @@
+#seeders/pokemon.py
 from app.models import Pokemon
-from flask_sqlalchemy import SQLAlchemy
 
 def seed_data(db):
     pokemons = [

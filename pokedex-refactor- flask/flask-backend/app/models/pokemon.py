@@ -1,6 +1,6 @@
-from flask_sqlalchemy import SQLAlchemy
-import enum
+#models/pokemon.py
 from app import db
+import enum
 
 class Types(enum.Enum):
     fire = "fire"
@@ -8,11 +8,11 @@ class Types(enum.Enum):
     normal = "normal"
     ghost = "ghost"
     psychic = "psychic"
-    water ="water"
-    bug ="bug"
-    dragon ="dragon"
-    grass ="grass"
-    fighting ="fighting"
+    water = "water"
+    bug = "bug"
+    dragon = "dragon"
+    grass = "grass"
+    fighting = "fighting"
     ice = "ice"
     flying = "flying"
     poison = "poison"
@@ -37,27 +37,21 @@ class Pokemon(db.Model):
     createdAt = db.Column(db.Date, nullable=False)
     updatedAt = db.Column(db.Date, nullable=False)
 
-    item = db.relationship(
-        "Item",
-        back_populates="pokemon"
-    )
+    item = db.relationship("Item", back_populates="pokemon")
 
-    def __init__(self):
-         return {
-            "id" : self.id,
-            "number" : self.number,
-            "attack" : self.attack,
-            "defense" : self.defense,
-            "imageUrl" : self.imageUrl,
-            "name" : self.name,
-            "type" : self.type,
-            "moves" : self.moves,
-            "encounterRate" : self.encounterRate,
-            "catchRate" : self.catchRate,
-            "captured": self.captured,
-            "createdAt": self.createdAt,
-            "updatedAt": self.updatedAt,
-            }
+def __init__(self, number, attack, defense, imageUrl, name, type, moves, encounterRate, catchRate, captured, createdAt, updatedAt):
+    self.number = number
+    self.attack = attack
+    self.defense = defense
+    self.imageUrl = imageUrl
+    self.name = name
+    self.type = type
+    self.moves = moves
+    self.encounterRate = encounterRate
+    self.catchRate = catchRate
+    self.captured = captured
+    self.createdAt = createdAt
+    self.updatedAt = updatedAt
 
     def __repr__(self):
-        return f"< Pokemon: {self.name}>"
+        return f"<Pokemon {self.name}>"
