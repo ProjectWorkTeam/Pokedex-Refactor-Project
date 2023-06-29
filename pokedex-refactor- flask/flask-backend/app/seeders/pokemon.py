@@ -11,7 +11,7 @@ def seed_data():
         'name': 'Poliwag',
         'attack': 50,
         'defense': 40,
-        'pokemon_type': 'water',
+        'type': 'water',
         'moves': ['bubble', 'water gun'],
         'captured': True
 
@@ -22,7 +22,7 @@ def seed_data():
         'name': 'Meowth',
         'attack': 45,
         'defense': 35,
-        'pokemon_type': 'normal',
+        'type': 'normal',
         'moves': ['scratch', 'bite'],
         'captured': True
 
@@ -33,7 +33,7 @@ def seed_data():
         'name': 'Slowbro',
         'attack': 75,
         'defense': 110,
-        'pokemon_type': 'water',
+        'type': 'water',
         'moves': ['psychic', 'water gun', 'confusion', 'headbutt'],
         'captured': True
 
@@ -44,7 +44,7 @@ def seed_data():
         'name': 'Gengar',
         'attack': 65,
         'defense': 60,
-        'pokemon_type': 'ghost',
+        'type': 'ghost',
         'moves': ['tackle', 'lick', 'shadow punch', 'shadow ball'],
         'captured': True
 
@@ -55,7 +55,7 @@ def seed_data():
         'name': 'Weezing',
         'attack': 90,
         'defense': 120,
-        'pokemon_type': 'poison',
+        'type': 'poison',
         'moves': ['tackle', 'smog', 'sludge'],
         'captured': True
 
@@ -66,7 +66,7 @@ def seed_data():
         'name': 'Chansey',
         'attack': 5,
         'defense': 5,
-        'pokemon_type': 'normal',
+        'type': 'normal',
         'moves': ['pound', 'egg bomb'],
         'captured': True
 
@@ -77,7 +77,7 @@ def seed_data():
         'name': 'Starmie',
         'attack': 75,
         'defense': 85,
-        'pokemon_type': 'water',
+        'type': 'water',
         'moves': ['water gun', 'swift'],
         'captured': True
 
@@ -88,7 +88,7 @@ def seed_data():
         'name': 'Lapras',
         'attack': 85,
         'defense': 80,
-        'pokemon_type': 'water',
+        'type': 'water',
         'moves': ['water gun', 'body slam', 'ice beam', 'hydro pump'],
         'captured': True
 
@@ -99,7 +99,7 @@ def seed_data():
         'name': 'Snorlax',
         'attack': 110,
         'defense': 65,
-        'pokemon_type': 'normal',
+        'type': 'normal',
         'moves': ['tackle', 'headbutt', 'snore', 'body slam'],
         'captured': True
 
@@ -110,7 +110,7 @@ def seed_data():
         'name': 'Squirtle',
         'attack': 48,
         'defense': 65,
-        'pokemon_type': 'water',
+        'type': 'water',
         'moves': ['tackle', 'bubble', 'water gun'],
         'captured': True
 
@@ -121,7 +121,7 @@ def seed_data():
         'name': 'Alakazam',
         'attack': 50,
         'defense': 45,
-        'pokemon_type': 'psychic',
+        'type': 'psychic',
         'moves': ['confusion', 'psybeam', 'psychic'],
         'captured': True
 
