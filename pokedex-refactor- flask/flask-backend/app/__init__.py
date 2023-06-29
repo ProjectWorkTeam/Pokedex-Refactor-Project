@@ -1,26 +1,21 @@
-
 # import statement for CSRF
 from flask_wtf.csrf import CSRFProtect, generate_csrf
-from flask import Flask
+from flask import Flask, request, redirect, render_template
+from .config import Configuration
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+import os
 
+
+app = Flask(__name__)
+app.config.from_object(Configuration)
 db = SQLAlchemy()
 migrate = Migrate()
+db.init_app(app)
 
-def create_app():
-    app = Flask(__name__)
-
-    # Configure database
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'DATABASE NAME HERE'
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-    db.init_app(app)
-    migrate.init_app(app, db)
-
-    #blueprints here?
-
-    return app
+@app.route("/")
+def home():
+    return "<h1>Pokemon Refactor</h1>"
 
 # after request code for CSRF token injection
 @app.after_request
