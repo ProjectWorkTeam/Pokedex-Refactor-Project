@@ -35,44 +35,4 @@ class PokemonForm(FlaskForm):
     captured = BooleanField('captured', validators=[DataRequired()])
 
 
-
-
-##second option
-
-
-from wtforms import Form, IntegerField, StringField, SelectField, DecimalField, BooleanField, validators
-from enum import Enum
-from wtforms.fields.html5 import DateField
-from wtforms.validators import Optional, URL, NumberRange, Length, DataRequired
-
-class Types(Enum):
-    fire = "fire"
-    electric = "electric"
-    normal = "normal"
-    ghost = "ghost"
-    psychic = "psychic"
-    water ="water"
-    bug ="bug"
-    dragon ="dragon"
-    grass ="grass"
-    fighting ="fighting"
-    ice = "ice"
-    flying = "flying"
-    poison = "poison"
-    ground = "ground"
-    rock = "rock"
-    steel = "steel"
-
-class PokemonForm(Form):
-    number = IntegerField('Number', [DataRequired(), NumberRange(min=1)])
-    attack = IntegerField('Attack', [DataRequired(), NumberRange(min=0, max=100)])
-    defense = IntegerField('Defense', [DataRequired(), NumberRange(min=0, max=100)])
-    imageUrl = StringField('Image URL', [DataRequired(), URL()])
-    name = StringField('Name', [DataRequired(), Length(min=3, max=255)])
-    type = SelectField('Type', [Optional()], choices=[(t, t.value) for t in Types], coerce=Types)
-    moves = StringField('Moves', [DataRequired(), Length(max=255)])
-    encounterRate = DecimalField('Encounter Rate', [DataRequired(), NumberRange(min=0, max=100)])
-    catchRate = DecimalField('Catch Rate', [DataRequired(), NumberRange(min=0, max=100)])
-    captured = BooleanField('Captured', [DataRequired()])
-    createdAt = DateField('Created At', [DataRequired()])
-    updatedAt = DateField('Updated At', [DataRequired()])
+    
