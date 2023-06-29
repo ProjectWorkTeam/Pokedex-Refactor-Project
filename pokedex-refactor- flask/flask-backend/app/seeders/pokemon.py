@@ -1,0 +1,135 @@
+from app.models import Pokemon
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+
+def seed_data():
+    pokemons = [
+    {
+        'number': 60,
+        'image_url': '/images/pokemon_snaps/60.svg',
+        'name': 'Poliwag',
+        'attack': 50,
+        'defense': 40,
+        'pokemon_type': 'water',
+        'moves': ['bubble', 'water gun'],
+        'captured': True
+
+    },
+      {
+        'number': 52,
+        'image_url': '/images/pokemon_snaps/52.svg',
+        'name': 'Meowth',
+        'attack': 45,
+        'defense': 35,
+        'pokemon_type': 'normal',
+        'moves': ['scratch', 'bite'],
+        'captured': True
+
+    },
+      {
+        'number': 80,
+        'image_url': '/images/pokemon_snaps/80.svg',
+        'name': 'Slowbro',
+        'attack': 75,
+        'defense': 110,
+        'pokemon_type': 'water',
+        'moves': ['psychic', 'water gun', 'confusion', 'headbutt'],
+        'captured': True
+
+    },
+      {
+        'number': 94,
+        'image_url': '/images/pokemon_snaps/94.svg',
+        'name': 'Gengar',
+        'attack': 65,
+        'defense': 60,
+        'pokemon_type': 'ghost',
+        'moves': ['tackle', 'lick', 'shadow punch', 'shadow ball'],
+        'captured': True
+
+    },
+      {
+        'number': 110,
+        'image_url': '/images/pokemon_snaps/110.svg',
+        'name': 'Weezing',
+        'attack': 90,
+        'defense': 120,
+        'pokemon_type': 'poison',
+        'moves': ['tackle', 'smog', 'sludge'],
+        'captured': True
+
+    },
+      {
+        'number': 113,
+        'image_url': '/images/pokemon_snaps/113.svg',
+        'name': 'Chansey',
+        'attack': 5,
+        'defense': 5,
+        'pokemon_type': 'normal',
+        'moves': ['pound', 'egg bomb'],
+        'captured': True
+
+    },
+      {
+        'number': 121,
+        'image_url': '/images/pokemon_snaps/121.svg',
+        'name': 'Starmie',
+        'attack': 75,
+        'defense': 85,
+        'pokemon_type': 'water',
+        'moves': ['water gun', 'swift'],
+        'captured': True
+
+    },
+      {
+        'number': 131,
+        'image_url': '/images/pokemon_snaps/131.svg',
+        'name': 'Lapras',
+        'attack': 85,
+        'defense': 80,
+        'pokemon_type': 'water',
+        'moves': ['water gun', 'body slam', 'ice beam', 'hydro pump'],
+        'captured': True
+
+    },
+      {
+        'number': 143,
+        'image_url': '/images/pokemon_snaps/143.svg',
+        'name': 'Snorlax',
+        'attack': 110,
+        'defense': 65,
+        'pokemon_type': 'normal',
+        'moves': ['tackle', 'headbutt', 'snore', 'body slam'],
+        'captured': True
+
+    },
+      {
+        'number': 7,
+        'image_url': '/images/pokemon_snaps/7.svg',
+        'name': 'Squirtle',
+        'attack': 48,
+        'defense': 65,
+        'pokemon_type': 'water',
+        'moves': ['tackle', 'bubble', 'water gun'],
+        'captured': True
+
+    },
+      {
+        'number': 65,
+        'image_url': '/images/pokemon_snaps/65.svg',
+        'name': 'Alakazam',
+        'attack': 50,
+        'defense': 45,
+        'pokemon_type': 'psychic',
+        'moves': ['confusion', 'psybeam', 'psychic'],
+        'captured': True
+
+    },
+]
+
+for pokemon_data in pokemons:
+    pokemon = Pokemon(**pokemon_data)
+    db.session.add(pokemon)
+
+db.session.commit()
