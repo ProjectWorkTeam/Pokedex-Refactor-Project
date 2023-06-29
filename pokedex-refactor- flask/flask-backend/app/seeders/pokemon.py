@@ -1,7 +1,6 @@
-from  app.models import Pokemon
+from app.models import Pokemon
 from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy()
+from app import db
 
 def seed_data():
     pokemons = [

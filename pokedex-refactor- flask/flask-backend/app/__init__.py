@@ -9,9 +9,8 @@ import os
 
 app = Flask(__name__)
 app.config.from_object(Configuration)
-db = SQLAlchemy()
-migrate = Migrate()
-db.init_app(app)
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
 @app.route("/")
 def home():
